@@ -14,7 +14,7 @@
     String email = request.getParameter("email");
     String password = request.getParameter("password");
 
-    //O שלב שני - קישור למסד הנתונים
+    //Connect to DB
     Connection con = MyUtils.getSiteDBconnection(application, "db\\siteDB.mdb");
     Statement stmt = con.createStatement();
 
@@ -32,7 +32,7 @@
         out.print("<center><h4>(" + username + "','" + gender + "','" + email + "','" + password + "')</h4></center>");
 //        out.print("<center><h3>Registration successful</h3></center><br>");
     }
-    //O סגירת הקשר עם מסד הנתונים
+    //End connection with DB
     stmt.close();
     con.close();
 %>
